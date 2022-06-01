@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './Countdowntimer.css';
 
 const defaultRemainingTime = {
@@ -9,17 +9,17 @@ const defaultRemainingTime = {
 }
 
 const CountdonwTimer = () => {
-    const [remainingTime, setRemainingTimer] = useState(defaultRemainingTime);
+    const [remainingTime] = useState(defaultRemainingTime);
 
-    useEffect(() => {
-        setInterval(() => {
+    // useEffect(() => {
+    //     setInterval(() => {
 
-        }, 1000);
-    },[])
+    //     }, 1000);
+    // },[])
 
-    function updateRemainingTime() {
+    // function updateRemainingTime() {
 
-    }
+    // }
 
     return(
         <div className="countdown-timer">
