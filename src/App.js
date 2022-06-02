@@ -1,8 +1,14 @@
 import './App.css';
 import CountdonwTimer from './Components/CountdownTimer/CountdownTimer';
+import React, { useEffect } from 'react'
+import ReactDOM from 'react-dom'
 
 function App() {
+  useEffect(() => {
+    document.title = "Countdown Timer"
+  }, [])
   return (
+    
     <div className="App">
       <div className="h1">
         <h1>Boot Camp</h1>
@@ -14,5 +20,10 @@ function App() {
     </div>
   );
 }
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
 
 export default App;
