@@ -1,13 +1,15 @@
 import './App.css';
-import CountdownTimer from './Components/CountdownTimer/CountdownTimer';
+import { Outlet, Link } from "react-router-dom";
 
 function App() {
   return (
-    
+
     <div className="App">
-      <div>
-        <CountdownTimer countdownTimestampMS={1661860800000} title="BootCamp"/>
-      </div>
+    <nav className="nav">
+      <Link className="nav-button" to="/">Home</Link>
+      <Link className="nav-button" to="/countdowntimer">Countdown Timer</Link>
+    </nav>
+    <Outlet />
     </div>
   );
 }

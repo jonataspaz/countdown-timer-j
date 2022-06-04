@@ -3,12 +3,38 @@
   padding: 0;
 }
 
+a {
+  color: #ffffff;
+  text-decoration: none; /* no underline */
+}
+
 .App {
   height: 100vh;
   background: rgb(255,255,255);
   background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(148,187,233,1) 100%);
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.nav {
+  margin-bottom: 50px;
+}
+
+.nav-button {
+  display: flex;
   justify-content: center;
+  background: linear-gradient(270deg, #054217, #0e3911);
+  color: #ffffff;
+  text-shadow: 1px 1px 2px;
+  border-radius: 15px;
+  border: 2px solid #9c9c9c;
+  box-shadow: 0 0 2px 2px;
+  padding: 2vw;
+  flex-direction: column;
+  font-family: 'Overpass', sans-serif;
+  margin: 10px;
   align-items: center;
 }
