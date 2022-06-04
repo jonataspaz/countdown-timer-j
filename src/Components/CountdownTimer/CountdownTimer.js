@@ -9,32 +9,52 @@ const defaultRemainingTime = {
     days: '00'
 }
 
-const CountdonwTimer = ({countdonwTimestampMS}) => {
+const CountdownTimer = ({countdownTimestampMS}, {title}) => {
     const [remainingTime, setRemainingTime] = useState(defaultRemainingTime);
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            updateRemainingTime(countdonwTimestampMS);
+            updateRemainingTime(countdownTimestampMS);
         }, 1000);
         return () => clearInterval(intervalId);
-    },[countdonwTimestampMS])
+    },[countdownTimestampMS])
 
     function updateRemainingTime(countdown) {
         setRemainingTime (getRemainingTimeUntilMsTimestamp(countdown));
     }
 
     return(
-        <div className="countdown-timer">
-            <span>{remainingTime.days}</span>
-            <span>days</span>
-            <span>{remainingTime.hours}</span>
-            <span>hours</span>
-            <span>{remainingTime.minutes}</span>
-            <span>minutes</span>
-            <span>{remainingTime.seconds}</span>
-            <span>seconds</span>
+        <div className="sign">
+            <h1>Boot Camp</h1>
+            <div className="countdown-timer">
+                <div className="timer-boxes">
+                    <span>{remainingTime.days}</span>
+                    <p className="number-text">Days</p>
+                </div>
+                <div className="colon">
+                    <span>:</span>
+                </div>
+                <div className="timer-boxes">
+                    <span>{remainingTime.hours}</span>
+                    <p className="number-text">Hours</p>
+                </div>
+                <div className="colon">
+                    <span>:</span>
+                </div>
+                <div className="timer-boxes">
+                    <span>{remainingTime.minutes}</span>
+                    <p className="number-text">Minutes</p>
+                </div>
+                <div className="colon">
+                    <span>:</span>
+                </div>
+                <div className="timer-boxes">
+                    <span>{remainingTime.seconds}</span>
+                    <p className="number-text">Seconds</p>
+                </div>
+            </div>
         </div>
     );
 }
 
-export default CountdonwTimer;
+export default CountdownTimer;
