@@ -9,7 +9,7 @@ const defaultRemainingTime = {
     days: '00'
 }
 
-const CountdownTimer = ({countdownTimestampMS}, {title}) => {
+const CountdownTimer = ({countdownTimestampMS, title}) => {
     const [remainingTime, setRemainingTime] = useState(defaultRemainingTime);
 
     useEffect(() => {
@@ -25,7 +25,7 @@ const CountdownTimer = ({countdownTimestampMS}, {title}) => {
 
     return(
         <div className="sign">
-            <h1>Boot Camp</h1>
+            <h1>{title}</h1>
             <div className="countdown-timer">
                 <div className="timer-boxes">
                     <span>{remainingTime.days}</span>

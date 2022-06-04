@@ -4,7 +4,6 @@
 }
 
 .App {
-  text-align: center;
   height: 100vh;
   background: rgb(255,255,255);
   background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(148,187,233,1) 100%);
@@ -12,11 +11,4 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-h1 {
-  font-size: 4vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
