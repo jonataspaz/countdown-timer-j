@@ -5,7 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import App from "./App";
-import CountdownTimer from "./routes/components/countdowntimer/countdowntimer";
+import CountdownTimer from "./routes/Components/CountdownTimer/CountdownTimer";
 
 
 const root = ReactDOM.createRoot(
