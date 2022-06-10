@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import {getRemainingTimeUntilMsTimestamp} from './Utils/CountdownTimerUtils'
 import React from 'react'
 import {createUseStyles} from 'react-jss'
+// import UserTime from './UserTime';
 
 
 const useStyles = createUseStyles({
@@ -19,7 +20,8 @@ const useStyles = createUseStyles({
         fontFamily: 'Overpass, sans-serif',
         '& h1': {
             display: 'flex',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            fontSize: '3vw'
         },
     },
     numberText: {
@@ -36,7 +38,7 @@ const useStyles = createUseStyles({
     },
     timerBoxes: {
         margin: '10px',
-        alignItems: 'baseline'
+        alignItems: 'baseline',
     }
 
 })
@@ -69,36 +71,42 @@ const CountdownTimer = ({countdownTimestampMS, title}) => {
     }
 
     return(
-        <div className={classes.sign}>
-            <h1>{title}</h1>
-            <div className={classes.countdownTimer}>
-                <div className={classes.timerBoxes}>
-                    <span>{remainingTime.days}</span>
-                    <p className={classes.numberText}>Days</p>
-                </div>
-                <div>
-                    <span>:</span>
-                </div>
-                <div className={classes.timerBoxes}>
-                    <span>{remainingTime.hours}</span>
-                    <p className={classes.numberText}>Hours</p>
-                </div>
-                <div>
-                    <span>:</span>
-                </div>
-                <div className={classes.timerBoxes}>
-                    <span>{remainingTime.minutes}</span>
-                    <p className={classes.numberText}>Minutes</p>
-                </div>
-                <div>
-                    <span>:</span>
-                </div>
-                <div className={classes.timerBoxes}>
-                    <span>{remainingTime.seconds}</span>
-                    <p className={classes.numberText}>Seconds</p>
+        <div>
+            <div className={classes.sign}>
+                <h1>{title}</h1>
+                <div className={classes.countdownTimer}>
+                    <div className={classes.timerBoxes}>
+                        <span>{remainingTime.days}</span>
+                        <p className={classes.numberText}>Days</p>
+                    </div>
+                    <div>
+                        <span>:</span>
+                    </div>
+                    <div className={classes.timerBoxes}>
+                        <span>{remainingTime.hours}</span>
+                        <p className={classes.numberText}>Hours</p>
+                    </div>
+                    <div>
+                        <span>:</span>
+                    </div>
+                    <div className={classes.timerBoxes}>
+                        <span>{remainingTime.minutes}</span>
+                        <p className={classes.numberText}>Minutes</p>
+                    </div>
+                    <div>
+                        <span>:</span>
+                    </div>
+                    <div className={classes.timerBoxes}>
+                        <span>{remainingTime.seconds}</span>
+                        <p className={classes.numberText}>Seconds</p>
+                    </div>
                 </div>
             </div>
+            {/* <div>
+                <UserTime title="BootCamp"/>
+            </div> */}
         </div>
+
     );
 }
 

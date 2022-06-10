@@ -16,6 +16,7 @@ root.render(
     <Routes>
     <Route path="/" element={<App />}>
         <Route path="countdowntimer" element={<CountdownTimer countdownTimestampMS={1661860800000} title="BootCamp"/>} />
+        <Route path="countdowntimerbootcamp" element={<CountdownTimer countdownTimestampMS={1661860800000} title="BootCampteste"/>} />
         <Route
           path="*"
           element={

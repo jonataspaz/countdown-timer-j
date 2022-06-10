@@ -31,7 +31,7 @@ const useStyles = createUseStyles({
       borderRadius: '15px',
       border: '2px solid #9c9c9c',
       boxShadow: '0 0 2px 2px',
-      padding: '2vw',
+      padding: '10px',
       flexDirection: 'column',
       fontFamily: 'Overpass, sans-serif',
       margin: '10px',

@@ -21,20 +21,28 @@ export function getRemainingTimeUntilMsTimestamp(timestampMs) {
 
 function getRemainingSeconds(nowDayjs, timestampDayjs) {
     const seconds = timestampDayjs.diff(nowDayjs, 'seconds') % 60;
+    if (seconds < 10)
+    {return '0' + seconds};
     return seconds
 }
 
 function getRemainingMinutes(nowDayjs, timestampDayjs) {
     const minutes = timestampDayjs.diff(nowDayjs, 'minutes') % 60;
-    return minutes 
+    if (minutes < 10)
+    {return '0' + minutes};
+    return minutes
 }
 
 function getRemainingHours(nowDayjs, timestampDayjs) {
     const hours = timestampDayjs.diff(nowDayjs, 'hours') % 24;
+    if (hours < 10)
+    {return '0' + hours};
     return hours
 }
 
 function getRemainingDays(nowDayjs, timestampDayjs) {
     const days = timestampDayjs.diff(nowDayjs, 'days');
+    if (days < 10)
+    {return '0' + days};
     return days
 }
