@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import {getRemainingTimeUntilMsTimestamp} from './Utils/CountdownTimerUtils'
+import {getRemainingTimeUntilMsTimestamp} from './CountdownTimerUtils'
 import React from 'react'
+import dayjs from 'dayjs';
 import {createUseStyles} from 'react-jss'
-// import UserTime from './UserTime';
+import UserTime from './UserTime';
 
 
 const useStyles = createUseStyles({
@@ -15,38 +16,45 @@ const useStyles = createUseStyles({
         textShadow: '1px 2px 2px',
         borderRadius: '15px',
         boxShadow: '0 0 5px 5px',
-        padding: '2vw',
+        padding: '2rem',
         flexDirection: 'column',
         fontFamily: 'Overpass, sans-serif',
         '& h1': {
             display: 'flex',
             justifyContent: 'center',
-            fontSize: '3vw'
+            fontSize: '2rem'
         },
     },
     numberText: {
-        fontSize: '3vw'
+        fontSize: '2rem'
     },
     countdownTimer: {
         display: 'flex',
         alignSelf: 'flex-start',
         alignItems: 'baseline',
         '& span': {
-            margin: '2px',
-            fontSize: '5vw'
+            margin: '1rem',
+            fontSize: '2rem'
         },
     },
     timerBoxes: {
-        margin: '10px',
+        margin: '2rem',
         alignItems: 'baseline',
     }
 
 })
 
+export function getCalenderTime(time) {
+    let now = dayjs();
+    if (time > 0) {
+        console.log(time);
+        return time
+    } 
+    now = dayjs(`${now.format("YYYY-MM-DD")}`).valueOf()
+    return now
+}
 
-
-
-
+var nowMs = getCalenderTime()
 
 const defaultRemainingTime = {
     seconds: '00',
@@ -55,7 +63,7 @@ const defaultRemainingTime = {
     days: '00'
 }
 
-const CountdownTimer = ({countdownTimestampMS, title}) => {
+export const CountdownTimer = ({countdownTimestampMS, title}) => {
     const classes = useStyles()
     const [remainingTime, setRemainingTime] = useState(defaultRemainingTime);
 
@@ -102,9 +110,6 @@ const CountdownTimer = ({countdownTimestampMS, title}) => {
                     </div>
                 </div>
             </div>
-            {/* <div>
-                <UserTime title="BootCamp"/>
-            </div> */}
         </div>
 
     );

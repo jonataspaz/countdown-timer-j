@@ -5,7 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import App from "./App";
-import CountdownTimer from "./routes/Components/CountdownTimer/CountdownTimer";
+import CountdownTimerHome from "./routes/Components/CountdownTimerHome";
 
 
 const root = ReactDOM.createRoot(
@@ -15,8 +15,7 @@ root.render(
   <BrowserRouter>
     <Routes>
     <Route path="/" element={<App />}>
-        <Route path="countdowntimer" element={<CountdownTimer countdownTimestampMS={1661860800000} title="Dev Academy"/>} />
-        <Route path="devacademy" element={<CountdownTimer countdownTimestampMS={1661860800000} title="Dev Academy"/>} />
+        <Route path="countdowntimer" element={<CountdownTimerHome/>} />
         <Route
           path="*"
           element={
@@ -29,3 +28,5 @@ root.render(
     </Routes>
   </BrowserRouter>
 );
+
+// 1661860800000 {<CountdownTimer countdownTimestampMS ={2098180800000} title="Dev Academy"/>
