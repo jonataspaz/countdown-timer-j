@@ -3,7 +3,7 @@ import {getRemainingTimeUntilMsTimestamp} from './CountdownTimerUtils'
 import React from 'react'
 import dayjs from 'dayjs';
 import {createUseStyles} from 'react-jss'
-import UserTime from './UserTime';
+// import UserTime from './UserTime';
 
 
 const useStyles = createUseStyles({
@@ -54,7 +54,7 @@ export function getCalenderTime(time) {
     return now
 }
 
-var nowMs = getCalenderTime()
+// var nowMs = getCalenderTime()
 
 const defaultRemainingTime = {
     seconds: '00',
