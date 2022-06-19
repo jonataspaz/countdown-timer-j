@@ -1,66 +1,56 @@
-import { useState, useEffect } from "react";
-import { getRemainingTimeUntilMsTimestamp } from "./CountdownTimerUtils";
-import React from "react";
-import dayjs from "dayjs";
-import { createUseStyles } from "react-jss";
+import React, { useState, useEffect } from 'react';
+
+import dayjs from 'dayjs';
+import { createUseStyles } from 'react-jss';
+import { getRemainingTimeUntilMsTimestamp } from './CountdownTimerUtils';
 // import UserTime from './UserTime';
 
 const useStyles = createUseStyles({
   sign: {
-    display: "flex",
-    justifyContent: "center",
-    background: "linear-gradient(270deg, #054217, #0e3911)",
-    color: "#ffffff",
-    textShadow: "1px 2px 2px",
-    borderRadius: "15px",
-    boxShadow: "0 0 5px 5px",
-    padding: "2rem",
-    flexDirection: "column",
-    fontFamily: "Overpass, sans-serif",
-    "& h1": {
-      display: "flex",
-      justifyContent: "center",
-      fontSize: "2rem",
+    display: 'flex',
+    justifyContent: 'center',
+    background: 'linear-gradient(270deg, #054217, #0e3911)',
+    color: '#ffffff',
+    textShadow: '1px 2px 2px',
+    borderRadius: '15px',
+    boxShadow: '0 0 5px 5px',
+    padding: '2rem',
+    flexDirection: 'column',
+    fontFamily: 'Overpass, sans-serif',
+    '& h1': {
+      display: 'flex',
+      justifyContent: 'center',
+      fontSize: '2rem',
     },
   },
   numberText: {
-    fontSize: "2rem",
+    fontSize: '2rem',
   },
   countdownTimer: {
-    display: "flex",
-    alignSelf: "flex-start",
-    alignItems: "baseline",
-    "& span": {
-      margin: "1rem",
-      fontSize: "2rem",
+    display: 'flex',
+    alignSelf: 'flex-start',
+    alignItems: 'baseline',
+    '& span': {
+      margin: '1rem',
+      fontSize: '2rem',
     },
   },
   timerBoxes: {
-    margin: "2rem",
-    alignItems: "baseline",
+    margin: '2rem',
+    alignItems: 'baseline',
   },
 });
-
-export function getCalenderTime(time) {
-  let now = dayjs();
-  if (time > 0) {
-    console.log(time);
-    return time;
-  }
-  now = dayjs(`${now.format("YYYY-MM-DD")}`).valueOf();
-  return now;
-}
 
 // var nowMs = getCalenderTime()
 
 const defaultRemainingTime = {
-  seconds: "00",
-  minutes: "00",
-  hours: "00",
-  days: "00",
+  seconds: '00',
+  minutes: '00',
+  hours: '00',
+  days: '00',
 };
 
-export const CountdownTimer = ({ countdownTimestampMS, title }) => {
+export default function CountdownTimer({ countdownTimestampMS, title }) {
   const classes = useStyles();
   const [remainingTime, setRemainingTime] = useState(defaultRemainingTime);
 
@@ -109,6 +99,4 @@ export const CountdownTimer = ({ countdownTimestampMS, title }) => {
       </div>
     </div>
   );
-};
-
-export default CountdownTimer;
+}
