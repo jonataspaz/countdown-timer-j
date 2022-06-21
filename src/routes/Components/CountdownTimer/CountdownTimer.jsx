@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
-
-import dayjs from 'dayjs';
 import { createUseStyles } from 'react-jss';
 import { getRemainingTimeUntilMsTimestamp } from './CountdownTimerUtils';
-// import UserTime from './UserTime';
 
 const useStyles = createUseStyles({
   sign: {
@@ -11,9 +8,9 @@ const useStyles = createUseStyles({
     justifyContent: 'center',
     background: 'linear-gradient(270deg, #054217, #0e3911)',
     color: '#ffffff',
-    textShadow: '1px 2px 2px',
+    textShadow: '1px 1px 1px',
     borderRadius: '15px',
-    boxShadow: '0 0 5px 5px',
+    boxShadow: '0 0 10px 10px',
     padding: '2rem',
     flexDirection: 'column',
     fontFamily: 'Overpass, sans-serif',
@@ -24,24 +21,25 @@ const useStyles = createUseStyles({
     },
   },
   numberText: {
-    fontSize: '2rem',
+    fontSize: '1rem',
+    display: 'flex',
+    alignSelf: 'center',
   },
   countdownTimer: {
     display: 'flex',
     alignSelf: 'flex-start',
     alignItems: 'baseline',
     '& span': {
-      margin: '1rem',
       fontSize: '2rem',
     },
   },
   timerBoxes: {
-    margin: '2rem',
-    alignItems: 'baseline',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    alignSelf: 'center',
   },
 });
-
-// var nowMs = getCalenderTime()
 
 const defaultRemainingTime = {
   seconds: '00',
