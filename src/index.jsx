@@ -21,5 +21,3 @@ root.render(
     </Routes>
   </BrowserRouter>
 );
-
-// 1661860800000 {<CountdownTimer countdownTimestampMS ={2098180800000} title="Dev Academy"/>
