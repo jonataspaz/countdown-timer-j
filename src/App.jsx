@@ -1,7 +1,7 @@
 import './App.css';
 import { Outlet, Link } from 'react-router-dom';
-import React from 'react';
 import { createUseStyles } from 'react-jss';
+import React from 'react';
 
 const useStyles = createUseStyles({
   app: {
